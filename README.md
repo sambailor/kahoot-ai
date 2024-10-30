@@ -1,6 +1,13 @@
-# Kahoot God (Kahoot Answer Bot)
+# Kahoot AI (Kahoot Answer Bot)
 
-This is a script that automatically screenshots a Kahoot game's questions and options, processes them, and then consults with OpenAI's GPT-4 to get the most likely answer. View the video here [Kahoot god video](https://www.youtube.com/watch?v=G0i_xx-6G-4&ab_channel=TheCodingSloth)
+FORK:
+- Problem: The original repository finds the Questions and Answers on a Kahoot page via screenshots, coordinates, and an OCR to extract the text. This causes issues when a the browser or display are a different size than what the source code expects (1440p).
+- I want to use the web elements directly. I have two ideas on how to do this.
+  1. Create a Chrome Extension, which will find the question and answers in the DOM. Send the questions and answers as a request to a flask API, which will interact with ChatGPT. Flask will be hosted locally for now, but perhaps one day I could host it online. The user will still need their own OpenAI API keys.
+  2. Use Chrome DevTools Protocol + Python or Selenium + Python to interact with an open Kahoot tab. No need for Flask API or Chrome extension here, since all work done is within python scripts.
+      - https://stackoverflow.com/questions/70713643/retrieve-html-from-web-page-with-chrome-dev-tools https://github.com/marty90/PyChromeDevTools
+
+Original script (kahoot_god.py) automatically screenshots a Kahoot game's questions and options, processes them, and then consults with OpenAI's GPT-4 to get the most likely answer. View the video here [Kahoot god video](https://www.youtube.com/watch?v=G0i_xx-6G-4&ab_channel=TheCodingSloth)
 
 ## Prerequisites
 
